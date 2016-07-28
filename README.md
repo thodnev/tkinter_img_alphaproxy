@@ -12,7 +12,7 @@ The main widget is ImgLabelButton, which inherits from Label and has next differ
 - `image` parameter should be an instance of PIL.Image.Image or provide `getbands` and `getdata` methods and `width` attr of above class.
 - `threshold` parameter specifies cut-off value of image alpha-channel. Pixels having alpha above `threshold` are meant to be active, others not.
 - `cursor` parameter now accepts a 2-tuple of `(cursor_active, cursor_normal)`, which allows cursor to change when it's over visible zone of the image
-- `bind` method has extra `proxyfy` parameter, when set to `True`, proxyfies passed-in callback function to act only in non-alpha (under threshold) zone of image
+- `bind` method has extra `proxyfy` parameter, when set to `True`, proxyfies passed-in callback function to act only in non-alpha (above threshold) zone of image
 - `isinimgzone` method is intended to be used for event testing, whether occured inside visible or transparent zone of the image
 - `command` parameter not handled *(this is by design, in that particular case it's better to bind a <Button-1> mouse click event etc than to assume)
 
